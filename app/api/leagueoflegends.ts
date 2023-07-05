@@ -8,23 +8,23 @@ const riotAuthorization = new Headers();
 riotAuthorization.append('X-Riot-Token', process.env.RIOT_API_KEY || '');
 
 // Provide limiters for each endpoint used
-const summonerLimiter = new RateLimiter({
-  tokensPerInterval: 10,
-  interval: 'second',
-});
+// const summonerLimiter = new RateLimiter({
+//   tokensPerInterval: 10,
+//   interval: 'second',
+// });
 
-const leagueLimiter = new RateLimiter({
-  tokensPerInterval: 10,
-  interval: 'second',
-});
+// const leagueLimiter = new RateLimiter({
+//   tokensPerInterval: 10,
+//   interval: 'second',
+// });
 
 // Call Summoner Endpoint
 export async function callSummonerApi(summoner: string) {
-  const remainingRequests = await summonerLimiter.removeTokens(1);
+  // const remainingRequests = await summonerLimiter.removeTokens(1);
 
-  if (remainingRequests === 0) {
-    throw console.error('Too many requests on RIOT Summoner API');
-  }
+  // if (remainingRequests === 0) {
+  //   throw console.error('Too many requests on RIOT Summoner API');
+  // }
 
   const encodedSummoner = encodeString(summoner);
 
@@ -49,11 +49,11 @@ export async function callSummonerApi(summoner: string) {
 
 // Call League of Legends Endpoint
 export async function callLeagueApi(encryptedSummoner: string) {
-  const remainingRequests = await leagueLimiter.removeTokens(1);
+  // const remainingRequests = await leagueLimiter.removeTokens(1);
 
-  if (remainingRequests === 0) {
-    throw console.error('Too many requests on RIOT League API');
-  }
+  // if (remainingRequests === 0) {
+  //   throw console.error('Too many requests on RIOT League API');
+  // }
 
   const response = await fetch(
     `https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/${encryptedSummoner}`,
