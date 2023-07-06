@@ -4,7 +4,7 @@ import { headers } from 'next/headers';
 
 export const { getClient } = registerApolloClient(() => {
   // Workaround to avoid using 'force-dynamic'
-  // headers();
+  headers();
 
   return new ApolloClient({
     cache: new InMemoryCache(),

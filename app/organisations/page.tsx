@@ -2,8 +2,6 @@ import { gql } from '@apollo/client';
 import Organisation from '../../components/Organisation';
 import { getClient } from '../../util/apolloClient';
 
-export const dynamic = 'force-dynamic';
-
 export const metadata = {
   title: 'Organisations',
   description: 'Explore organisations registered in the ESVÖ playerdatabase',

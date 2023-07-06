@@ -14,8 +14,6 @@ import LeagueAccountMoreButton from './LeagueAccountMoreButton';
 import RemoveAssociation from './RemoveAssociation';
 import UpdateLeagueAccounts from './UpdateLeagueAccounts';
 
-export const dynamic = 'force-dynamic';
-
 type Props = {
   params: {
     slug: string;

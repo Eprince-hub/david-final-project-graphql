@@ -10,8 +10,6 @@ import { PlayerQuery } from '../../players/page';
 import EditProfile from './EditProfile';
 import PendingQueries from './PendingQueries';
 
-export const dynamic = 'force-dynamic';
-
 type Props = {
   params: {
     slug: string;

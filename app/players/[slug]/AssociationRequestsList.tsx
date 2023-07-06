@@ -4,8 +4,6 @@ import { getClient } from '../../../util/apolloClient';
 import AcceptAssociation from './AcceptAssociation';
 import DenyAssociation from './DenyAssociation';
 
-export const dynamic = 'force-dynamic';
-
 type Props = {
   playerId: number;
 };
